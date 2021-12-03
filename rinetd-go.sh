@@ -198,12 +198,12 @@ function data_processing(){
 			exit 1
 		fi
 		if [[ ${determine_type} = "1" ]]; then
-			rinetd_ver=$(wget -qO- "https://github.com/linhua55/lkl_study/tags"|grep "/linhua55/lkl_study/releases/tag/"|head -n 1|awk -F "/tag/" '{print $2}'|sed 's/\">//')
+			rinetd_ver=$(wget -qO- "https://github.com/manatsu525/lkl_study/tags"|grep "/manatsu525/lkl_study/releases/tag/"|head -n 1|awk -F "/tag/" '{print $2}'|sed 's/\">//')
 			if [[ ${rinetd_ver} = "" ]]; then
 				echo -e "${error_font}获取Rinetd版本号失败！"
 				exit 1
 			fi
-			wget "https://github.com/linhua55/lkl_study/releases/download/${rinetd_ver}/rinetd_pcc" -O "/usr/local/rinetd/rinetd"
+			wget "https://github.com/manatsu525/lkl_study/releases/download/${rinetd_ver}/rinetd_pcc" -O "/usr/local/rinetd/rinetd"
 			if [[ $? -eq 0 ]];then
 				clear
 				echo -e "${ok_font}下载Rinetd文件成功。"
@@ -231,12 +231,12 @@ function data_processing(){
 				exit 1
 			fi
 		elif [[ ${determine_type} = "2" ]]; then
-			rinetd_ver=$(wget -qO- "https://github.com/linhua55/lkl_study/tags"|grep "/linhua55/lkl_study/releases/tag/"|head -n 1|awk -F "/tag/" '{print $2}'|sed 's/\">//')
+			rinetd_ver=$(wget -qO- "https://github.com/manatsu525/lkl_study/tags"|grep "/manatsu525/lkl_study/releases/tag/"|head -n 1|awk -F "/tag/" '{print $2}'|sed 's/\">//')
 			if [[ ${rinetd_ver} = "" ]]; then
 				echo -e "${error_font}获取Rinetd版本号失败！"
 				exit 1
 			fi
-			wget "https://github.com/linhua55/lkl_study/releases/download/${rinetd_ver}/rinetd_bbr" -O "/usr/local/rinetd/rinetd"
+			wget "https://github.com/manatsu525/lkl_study/releases/download/${rinetd_ver}/rinetd_bbr" -O "/usr/local/rinetd/rinetd"
 			if [[ $? -eq 0 ]];then
 				clear
 				echo -e "${ok_font}下载Rinetd文件成功。"
@@ -264,12 +264,12 @@ function data_processing(){
 				exit 1
 			fi
 		elif [[ ${determine_type} = "3" ]]; then
-			rinetd_ver=$(wget -qO- "https://github.com/linhua55/lkl_study/tags"|grep "/linhua55/lkl_study/releases/tag/"|head -n 1|awk -F "/tag/" '{print $2}'|sed 's/\">//')
+			rinetd_ver=$(wget -qO- "https://github.com/manatsu525/lkl_study/tags"|grep "/manatsu525/lkl_study/releases/tag/"|head -n 1|awk -F "/tag/" '{print $2}'|sed 's/\">//')
 			if [[ ${rinetd_ver} = "" ]]; then
 				echo -e "${error_font}获取Rinetd版本号失败！"
 				exit 1
 			fi
-			wget "https://github.com/linhua55/lkl_study/releases/download/${rinetd_ver}/rinetd_bbr_powered" -O "/usr/local/rinetd/rinetd"
+			wget "https://github.com/manatsu525/lkl_study/releases/download/${rinetd_ver}/rinetd_bbr_powered" -O "/usr/local/rinetd/rinetd"
 			if [[ $? -eq 0 ]];then
 				clear
 				echo -e "${ok_font}下载Rinetd文件成功。"
@@ -426,7 +426,7 @@ function uninstall_program(){
 function upgrade_program(){
 	clear
 	echo -e "正在升级中..."
-	rinetd_ver=$(wget -qO- "https://github.com/linhua55/lkl_study/tags"|grep "/linhua55/lkl_study/releases/tag/"|head -n 1|awk -F "/tag/" '{print $2}'|sed 's/\">//')
+	rinetd_ver=$(wget -qO- "https://github.com/manatsu525/lkl_study/tags"|grep "/manatsu525/lkl_study/releases/tag/"|head -n 1|awk -F "/tag/" '{print $2}'|sed 's/\">//')
 	if [[ ${rinetd_ver} = "" ]]; then
 		echo -e "${error_font}获取Rinetd版本号失败！"
 		exit 1
@@ -442,7 +442,7 @@ function upgrade_program(){
 	fi
 	install_type=$(cat /usr/local/rinetd/install_type.txt)
 	if [[ ${install_type} = "1" ]]; then
-		wget "https://github.com/linhua55/lkl_study/releases/download/${rinetd_ver}/rinetd_pcc" -O "/usr/local/rinetd/rinetd"
+		wget "https://github.com/manatsu525/lkl_study/releases/download/${rinetd_ver}/rinetd_pcc" -O "/usr/local/rinetd/rinetd"
 		if [[ $? -eq 0 ]];then
 			clear
 			echo -e "${ok_font}下载Rinetd文件成功。"
@@ -479,7 +479,7 @@ function upgrade_program(){
 			exit 1
 		fi
 	elif [[ ${install_type} = "2" ]]; then
-		wget "https://github.com/linhua55/lkl_study/releases/download/${rinetd_ver}/rinetd_bbr" -O "/usr/local/rinetd/rinetd"
+		wget "https://github.com/manatsu525/lkl_study/releases/download/${rinetd_ver}/rinetd_bbr" -O "/usr/local/rinetd/rinetd"
 		if [[ $? -eq 0 ]];then
 			clear
 			echo -e "${ok_font}下载Rinetd文件成功。"
@@ -516,7 +516,7 @@ function upgrade_program(){
 			exit 1
 		fi
 	elif [[ ${install_type} = "3" ]]; then
-		wget "https://github.com/linhua55/lkl_study/releases/download/${rinetd_ver}/rinetd_bbr_powered" -O "/usr/local/rinetd/rinetd"
+		wget "https://github.com/manatsu525/lkl_study/releases/download/${rinetd_ver}/rinetd_bbr_powered" -O "/usr/local/rinetd/rinetd"
 		if [[ $? -eq 0 ]];then
 			clear
 			echo -e "${ok_font}下载Rinetd文件成功。"
